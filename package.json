@@ -1,0 +1,46 @@
+{
+  "name": "@lemeai/cli",
+  "version": "0.1.1",
+  "type": "module",
+  "description": "CLI for calling Leme project integrations from coding agents and scripts.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leme-ai/cli.git"
+  },
+  "homepage": "https://github.com/leme-ai/cli#readme",
+  "bugs": {
+    "url": "https://github.com/leme-ai/cli/issues"
+  },
+  "keywords": [
+    "leme",
+    "cli",
+    "agents",
+    "coding-agents",
+    "integrations"
+  ],
+  "bin": {
+    "leme": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod 755 dist/index.js",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run typecheck",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "typescript": "^5.9.3"
+  }
+}
